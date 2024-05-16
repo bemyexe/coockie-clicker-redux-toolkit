@@ -1,9 +1,9 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useDispatch } from "react-redux";
 import "./style.scss";
 import { increment, reset } from "../store/slices/clickerSlice";
+import Count from "./count";
 
 function App() {
-  const count = useSelector((state) => state.clicker.value);
   const dispatch = useDispatch();
 
   return (
@@ -15,8 +15,7 @@ function App() {
           src="assets/cookie.svg"
           onClick={() => dispatch(increment())}
         />
-
-        <p>count is {count}</p>
+        <Count />
         <p>
           <button onClick={() => dispatch(reset())}>RESET</button>
         </p>
